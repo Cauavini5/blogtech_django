@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <link rel="stylesheet" href="{% static 'css/mainHome.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <header>
+        <h3>BlogTech</h3>
+        <div class="links">
+            <a href="{% url 'formvalid' %}">Sign Up</a>
+            <a href="{% url 'Loginn' %}">Sign in</a>
+        </div>
+    </header>
+
+    {% if messages %}
+    <div class="alert alert-primary" role="alert">
+        {% for message in messages %}
+        {{ message }}
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <h1>Escreva e leia artigos, você decide oque escrever!</h1>
+    <h3>Este projeto está em desenvolvimento!</h3>
+</body>
+</html>

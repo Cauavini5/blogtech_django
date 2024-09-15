@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/HomePage.css' %}">
+    <title>Home</title>
+</head>
+<body>
+
+    <header>
+        <h4>BlogTech</h4>
+        <div class="items">
+            <p id="user">{{user}}</p>
+            <a class="logout" href="{% url 'Logout' %}">Logout</a>
+        </div>
+    </header>
+    {% if messages %}
+    <div class="alert-primary" role="alert">
+        {% for message in messages %}
+        <p>{{ message }}</p>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    
+    <form class="formpost" autocomplete="off" action="{% url 'AddPost' %}" method="post">
+        <h3>Adicione um post</h3>
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">POST</button>
+    </form> 
+
+    <h3 class="h3_home">My Posts</h3>
+
+    {% if posts %}
+        {% for post in posts %}
+        <div class="post" >
+            <h1>{{post.title}}</h1>
+            <h4>Author: {{post.author}}</h4>
+            <p>{{ post.summary }}...</p>
+            <form action="{% url 'DeletePost' %}" method="post">
+                {% csrf_token %}
+                <input value="{{post.title}}" type="hidden" name="title"">
+                <input type="hidden" value="{{post.author}}" name="author">
+                <a href="{% url 'Post' post.id_p %}">CLICK</a>
+                <button type="submit">DELETE</button>
+            </form>
+        </div>
+    {% endfor %}
+    {% else %}
+        <p class="notpost">Não há post!</p>
+    
+    {% endif %}
+
+
+</body>
+</html>

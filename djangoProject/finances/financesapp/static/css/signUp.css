@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=New+Amsterdam&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+body {
+    background-color: rgb(31, 30, 30);
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: auto;
+    text-align: center;
+    height: 100vh;
+    align-content: center;
+}
+
+body > .container {
+    width: 100%;
+    height: max-content;
+    padding: 2em;
+    background-color: white;
+    border-radius: 1%;
+    
+}
+
+body > .container > form > label {
+    display: none;
+}
+
+
+body > .container > form {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 2em 2em 2em;
+    grid-gap: 0.9em;
+    border: none;
+    padding: 2em;
+}
+
+body > .container > form > input {
+    border:none;
+    border-bottom: 1px solid #acacac;
+    
+    outline: none;
+}
+
+body > .container > form > input::placeholder {
+    font-size: 0.8em;
+    color: rgb(163, 163, 163);
+}
+
+body > .container > form > button {
+    border: none;
+    font-family: "New Amsterdam", system-ui;
+    box-shadow: 0px 2px 5px 0px rgba(77, 76, 76, 0.75);
+}
+
+body > .container > h1{
+    font-family: "Playfair Display", system-ui;
+}
+

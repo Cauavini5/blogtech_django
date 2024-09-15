@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+body {
+    background-color: rgb(255, 255, 255);
+}
+
+header {
+    width: 100%;
+    padding: 0.2rem;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+header > .items {
+    display: flex;
+    align-items: center;
+}
+
+header > .items > * {
+    margin: 0.5rem;
+}
+
+.alert-primary {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-size: 0.8rem;
+    font-style: normal;
+
+}
+
+#user {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.logout {
+    text-decoration: none;
+    font-family: "Lato", sans-serif;
+    font-weight: 500;
+    font-size: 0.8rem;
+    padding: 0.5rem;
+    background-color: rgb(17, 18, 36);
+    color: white;
+    border-radius: 5px;
+}
+.formpost > label {
+    display:none;
+}
+.formpost {
+    text-align: center;
+    width: 40%;
+    margin: 10px auto;
+    text-decoration: none;
+    font-family: "Lato", sans-serif;
+    font-weight: 500;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(6, 2em);
+    grid-gap: 1rem;
+}
+
+.formpost > input {
+    border: 1px solid rgb(17, 18, 36);
+    border-radius: 3px;
+    text-indent: 1rem;
+}
+
+
+.formpost > button {
+    background-color:rgb(17, 18, 36);
+    border: none;
+    border-radius: 3px;
+    color: white;
+}
+
+.h3_home {
+    font-family: "Lato", sans-serif;
+    font-weight: 500;
+}
+
+.post {
+    padding: 1rem;
+    margin: 0.5rem;
+    font-family: "Lato", sans-serif;
+    font-weight: 500;
+    box-shadow: 0px 0px 3px 1px rgb(212, 212, 212);
+}
+
+.notpost {
+    font-family: "Lato", sans-serif;
+    font-weight: 500;
+}
+
+.post > * {
+    margin: 0.5rem;
+}
+
+.post  > form > button {
+    background-color:rgb(17, 18, 36);
+    border: none;
+    border-radius: 3px;
+    color: white;
+    padding: 0.4rem;
+}
+
+.post  > form {
+    display: grid;
+    grid-template-columns: max-content;
+    grid-gap:0.4rem;
+
+}
