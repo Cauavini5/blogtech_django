@@ -40,7 +40,7 @@ def Loginn(request):
          
         if user is None:
             
-            messages.error(request, 'Algum dado está errado!')
+            messages.error(request, 'Algum campo está errado!')
             return redirect(Loginn)
         else:
             
@@ -73,11 +73,11 @@ def formvalid(request):
         username = request.POST.get('username')
         password = request.POST.get('password')
          
-        # Check if a user with the provided username already exists
+        
         user = User.objects.filter(username=username)
          
         if user.exists():
-            # Display an information message if the username is taken
+            
             messages.info(request, "Username already taken!")
             return redirect(formvalid)
         elif username.__len__() > 30 or password.__len__() > 30:
@@ -87,22 +87,22 @@ def formvalid(request):
         if form_cleaned.is_valid():
             user_cleaned = form_cleaned.cleaned_data['username']
             pass_cleaned = form_cleaned.cleaned_data['password']
-            # Create a new User object with the provided information
+            
             user = User.objects.create_user(
                 password=password,
                 username=username
             )
          
-            # Set the user's password and save the user object
+            
             user.set_password(password)
             user.save()
          
-        # Display an information message indicating successful account creation
+        
         messages.info(request, "Account created Successfully!")
         
         return redirect(mainHome)
      
-    # Render the registration page template (GET request)
+    
     form = SignUP()
     return render(request, 'signUp.html', {'form':form})
 
